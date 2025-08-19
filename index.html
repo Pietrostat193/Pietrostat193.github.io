@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name – Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name: projects, skills, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0e13;
+      --card: #121721;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --accent: #5b9cff;
+      --ring: rgba(91,156,255,.35);
+      --border: #232b38;
+    }
+    *{ box-sizing:border-box }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; line-height:1.6 }
+    a{ color:var(--accent); text-decoration:none }
+    a:hover{ text-decoration:underline }
+    .container{ max-width:1100px; margin:0 auto; padding:24px }
+    header{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:24px 0 }
+    .brand{ display:flex; align-items:center; gap:12px }
+    .avatar{ width:44px; height:44px; border-radius:50%; background:#222 url('assets/avatar.jpg') center/cover no-repeat; border:1px solid var(--border) }
+    .name{ font-weight:700; letter-spacing:.2px }
+    .nav a{ color:var(--muted); margin-left:18px }
+    .nav a.active{ color:var(--text) }
+    .chip{ display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:12px }
+    .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:24px 0 10px }
+    .hero h1{ font-size:40px; line-height:1.15; margin:.2em 0 }
+    .hero p{ color:var(--muted); margin:0 0 16px }
+    .hero .cta{ display:flex; gap:12px; margin-top:8px }
+    .btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--card); color:var(--text); font-weight:600 }
+    .btn.primary{ background:linear-gradient(180deg, #6aa6ff, #4b84ff); border-color:#3f70db; box-shadow:0 0 0 6px var(--ring) }
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+    .card{ background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden }
+    .thumb{ aspect-ratio:16/9; background:#1a2230 url('assets/project-1.jpg') center/cover no-repeat; border-bottom:1px solid var(--border) }
+    .card-body{ padding:16px }
+    .card h3{ margin:0 0 6px; font-size:18px }
+    .meta{ font-size:12px; color:var(--muted) }
+    .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px }
+    .tag{ padding:4px 8px; font-size:12px; background:#0e131c; border:1px solid var(--border); border-radius:999px; color:var(--muted) }
+    section{ padding:26px 0 }
+    .section-title{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px }
+    .section-title h2{ margin:0; font-size:20px }
+    .skills{ display:flex; flex-wrap:wrap; gap:8px }
+    .skill{ padding:8px 10px; background:var(--card); border:1px solid var(--border); border-radius:10px; color:var(--muted); font-size:14px }
+    .about{ display:grid; grid-template-columns:1fr 1fr; gap:18px }
+    .about .blurb{ color:var(--muted) }
+    .foot{ margin-top:36px; padding:22px 0; color:var(--muted); border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px }
+    .socials{ display:flex; gap:10px }
+    .note{ font-size:12px }
+    .kbd{ font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; background:#0f1420; border:1px solid var(--border); border-radius:6px; padding:2px 6px }
+    .toggle{ cursor:pointer; padding:6px 10px; border-radius:8px; border:1px solid var(--border); color:var(--muted); background:var(--card) }
+
+    @media (max-width: 900px){
+      .hero{ grid-template-columns:1fr; }
+      .grid{ grid-template-columns:1fr; }
+      .about{ grid-template-columns:1fr; }
+      header{ flex-direction:column; align-items:flex-start }
+      .nav{ display:flex; gap:14px; flex-wrap:wrap }
+    }
+
+    /* Light mode */
+    .light{ --bg:#f7f9fc; --card:#ffffff; --text:#0f1420; --muted:#4a5668; --accent:#2b6bff; --ring:rgba(43,107,255,.18); --border:#e6eaf1 }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <div class="name">Your Name</div>
+          <div class="chip">Software Engineer • Open Source</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects" class="active">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="toggle" id="modeToggle" aria-label="Toggle color mode">Toggle theme</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="chip">Available for freelance</span>
+        <h1>Building clean, resilient interfaces and developer tools.</h1>
+        <p>I design and ship performant web experiences and helpful tooling. Previously at <strong>Company</strong>. I like TypeScript, accessibility, and DX.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="resume.pdf">Download résumé</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb" role="img" aria-label="Featured project preview"></div>
+        <div class="card-body">
+          <div class="meta">Featured project</div>
+          <h3>Acme Dashboard</h3>
+          <p class="meta">Realtime analytics dashboard with auth, charts, and dark mode.</p>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Node</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span class="meta">Selected work</span>
+      </div>
+      <div class="grid">
+        <!-- Project card -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('assets/project-1.jpg')"></div>
+          <div class="card-body">
+            <h3><a href="#">Project One</a></h3>
+            <div class="meta">Small blurb about what it is and your contribution.</div>
+            <div class="tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">Postgres</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb" style="background-image:url('assets/project-2.jpg')"></div>
+          <div class="card-body">
+            <h3><a href="#">Project Two</a></h3>
+            <div class="meta">What problem it solves, who uses it, what tech you used.</div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb" style="background-image:url('assets/project-3.jpg')"></div>
+          <div class="card-body">
+            <h3><a href="#">Project Three</a></h3>
+            <div class="meta">Result/impact metric if possible (e.g., reduced load time by 45%).</div>
+            <div class="tags">
+              <span class="tag">Svelte</span>
+              <span class="tag">Go</span>
+              <span class="tag">gRPC</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <span class="meta">What I work with</span>
+      </div>
+      <div class="skills">
+        <span class="skill">TypeScript</span>
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Python</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">AWS</span>
+        <span class="skill">CI/CD</span>
+        <span class="skill">Testing</span>
+        <span class="skill">Accessibility</span>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <div class="section-title">
+          <h2>About</h2>
+          <span class="meta">Who I am</span>
+        </div>
+        <p class="blurb">I enjoy turning complex problems into simple, beautiful, and intuitive products. When I’m not coding, you’ll find me hiking, brewing coffee, or writing about developer experience.</p>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>Highlights</h3>
+          <ul>
+            <li>5+ years building SaaS products</li>
+            <li>Shipped to millions of users</li>
+            <li>Open-source maintainer</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="meta">Let’s talk</span>
+      </div>
+      <p>Email me at <a href="mailto:you@example.com">you@example.com</a> or DM me on <a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a>.</p>
+      <p class="note">Tip: add a custom domain in your repo settings, and put a <span class="kbd">CNAME</span> file in the root.</p>
+    </section>
+
+    <footer class="foot">
+      <span>© <span id="year"></span> Your Name</span>
+      <div class="socials">
+        <a href="https://github.com/yourname" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/yourname" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://yourblog.example" aria-label="Blog">Blog</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Theme toggle
+    const toggle = document.getElementById('modeToggle');
+    const setMode = (m) => { document.documentElement.classList.toggle('light', m==='light'); localStorage.setItem('mode', m); };
+    const current = localStorage.getItem('mode') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    setMode(current);
+    toggle.addEventListener('click', () => setMode(document.documentElement.classList.contains('light') ? 'dark' : 'light'));
+  </script>
+</body>
+</html>
