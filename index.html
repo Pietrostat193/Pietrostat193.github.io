@@ -3,20 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pietro Colombo – Portfolio</title>
-  <meta name="description" content="Portfolio of Your Name: projects, skills, and contact." />
+  <title>Pietro Colombo – Statistician & ML Researcher</title>
+  <meta name="description" content="Portfolio of Pietro Colombo — statistician and researcher in machine learning, data fusion, forecasting, and approximation methods for large spatio-temporal datasets." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b0e13;
-      --card: #121721;
-      --text: #e6e9ef;
-      --muted: #9aa4b2;
-      --accent: #5b9cff;
-      --ring: rgba(91,156,255,.35);
-      --border: #232b38;
+      --bg:#0b0e13; --card:#121721; --text:#e6e9ef; --muted:#9aa4b2; --accent:#5b9cff; --ring:rgba(91,156,255,.35); --border:#232b38;
     }
     *{ box-sizing:border-box }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; line-height:1.6 }
@@ -75,8 +69,8 @@
       <div class="brand">
         <div class="avatar" aria-hidden="true"></div>
         <div>
-          <div class="name">Your Name</div>
-          <div class="chip">Software Engineer • Open Source</div>
+          <div class="name">Pietro Colombo</div>
+          <div class="chip">Statistician • ML Researcher</div>
         </div>
       </div>
       <nav class="nav" aria-label="Primary">
@@ -90,24 +84,24 @@
 
     <section class="hero">
       <div>
-        <span class="chip">Available for freelance</span>
-        <h1>Building clean, resilient interfaces and developer tools.</h1>
-        <p>I design and ship performant web experiences and helpful tooling. Previously at <strong>Company</strong>. I like TypeScript, accessibility, and DX.</p>
+        <span class="chip">Based in Glasgow • Open to collaboration</span>
+        <h1>Data fusion, forecasting, and scalable models for spatio-temporal data.</h1>
+        <p>I build statistical and machine-learning solutions for energy, environment, and economics—combining rigorous modelling with practical automation and dashboards. Visiting Researcher at ETH Zürich; PhD candidate in Statistics at the University of Glasgow; Lecturer and research collaborator across the UK, Switzerland, and Italy.</p>
         <div class="cta">
           <a class="btn primary" href="#projects">View projects</a>
           <a class="btn" href="resume.pdf">Download résumé</a>
         </div>
       </div>
       <div class="card">
-        <div class="thumb" role="img" aria-label="Featured project preview"></div>
+        <div class="thumb" role="img" aria-label="Screenshot of an automated forecasting dashboard"></div>
         <div class="card-body">
           <div class="meta">Featured project</div>
-          <h3>Acme Dashboard</h3>
-          <p class="meta">Realtime analytics dashboard with auth, charts, and dark mode.</p>
+          <h3>Automated Forecasting Platform</h3>
+          <p class="meta">Upload-anything time-series tool with transforms, model selection, and scenario tweaks via interactive R Shiny.</p>
           <div class="tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">React</span>
-            <span class="tag">Node</span>
+            <span class="tag">R</span>
+            <span class="tag">Shiny</span>
+            <span class="tag">Time Series</span>
           </div>
         </div>
       </div>
@@ -118,41 +112,37 @@
         <h2>Projects</h2>
         <span class="meta">Selected work</span>
       </div>
-      <div class="grid">
-        <!-- Project card -->
+      <div class="grid" id="projectGrid">
+        <!-- Project cards (curated) -->
         <article class="card">
           <div class="thumb" style="background-image:url('assets/project-1.jpg')"></div>
           <div class="card-body">
-            <h3><a href="#">Project One</a></h3>
-            <div class="meta">Small blurb about what it is and your contribution.</div>
+            <h3><a href="https://www.paolomaranzano.net/scarface" target="_blank" rel="noopener">Spatio-Temporal Environmental DB</a></h3>
+            <div class="meta">Automated ingestion from Eurostat GISCO, ISTAT, Copernicus ERA-5, LUCAS, EDGAR (JRC), and EEA; harmonization + block kriging to a common support.</div>
             <div class="tags">
-              <span class="tag">Next.js</span>
-              <span class="tag">GraphQL</span>
-              <span class="tag">Postgres</span>
+              <span class="tag">Python</span><span class="tag">APIs</span><span class="tag">GIS</span><span class="tag">Kriging</span>
             </div>
           </div>
         </article>
+
         <article class="card">
           <div class="thumb" style="background-image:url('assets/project-2.jpg')"></div>
           <div class="card-body">
-            <h3><a href="#">Project Two</a></h3>
-            <div class="meta">What problem it solves, who uses it, what tech you used.</div>
+            <h3><a href="#">Atlantic Hurricane Forecasting</a></h3>
+            <div class="meta">Yearly hurricane count forecasts using probabilistic, machine-learning, and statistical methods; emphasis on uncertainty.</div>
             <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">Docker</span>
+              <span class="tag">Probabilistic Modelling</span><span class="tag">ML</span><span class="tag">Forecasting</span>
             </div>
           </div>
         </article>
+
         <article class="card">
           <div class="thumb" style="background-image:url('assets/project-3.jpg')"></div>
           <div class="card-body">
-            <h3><a href="#">Project Three</a></h3>
-            <div class="meta">Result/impact metric if possible (e.g., reduced load time by 45%).</div>
+            <h3><a href="#">Robust Pollution Modelling</a></h3>
+            <div class="meta">Algorithms resilient to anomalous observations for accurate air-quality predictions.</div>
             <div class="tags">
-              <span class="tag">Svelte</span>
-              <span class="tag">Go</span>
-              <span class="tag">gRPC</span>
+              <span class="tag">Robust Stats</span><span class="tag">Air Quality</span><span class="tag">Spatio-Temporal</span>
             </div>
           </div>
         </article>
@@ -165,15 +155,17 @@
         <span class="meta">What I work with</span>
       </div>
       <div class="skills">
-        <span class="skill">TypeScript</span>
-        <span class="skill">React</span>
-        <span class="skill">Node.js</span>
         <span class="skill">Python</span>
-        <span class="skill">PostgreSQL</span>
-        <span class="skill">AWS</span>
-        <span class="skill">CI/CD</span>
-        <span class="skill">Testing</span>
-        <span class="skill">Accessibility</span>
+        <span class="skill">R</span>
+        <span class="skill">Matlab</span>
+        <span class="skill">Time-Series Forecasting</span>
+        <span class="skill">Data Fusion</span>
+        <span class="skill">Spatio-Temporal Modelling</span>
+        <span class="skill">GIS / Kriging</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">AWS / Cloud</span>
+        <span class="skill">Git & GitHub</span>
+        <span class="skill">Teaching & Supervision</span>
       </div>
     </section>
 
@@ -183,15 +175,21 @@
           <h2>About</h2>
           <span class="meta">Who I am</span>
         </div>
-        <p class="blurb">I enjoy turning complex problems into simple, beautiful, and intuitive products. When I’m not coding, you’ll find me hiking, brewing coffee, or writing about developer experience.</p>
+        <p class="blurb">I’m a statistician and researcher focusing on scalable modelling for large spatio-temporal datasets, data integration, and forecasting across energy, environment, and economics. Experience spans public and private sectors, short-term consultancies, and academic teaching.</p>
+        <ul class="meta" style="margin-top:8px">
+          <li>Visiting Research — ETH Zürich (Approximation methods for large datasets)</li>
+          <li>PhD in Statistics — University of Glasgow (Data Fusion for environmental variables)</li>
+          <li>Lecturer in Statistics — University of Glasgow</li>
+          <li>Research appointments — Universities in Italy & UK</li>
+        </ul>
       </div>
       <div class="card">
         <div class="card-body">
           <h3>Highlights</h3>
           <ul>
-            <li>5+ years building SaaS products</li>
-            <li>Shipped to millions of users</li>
-            <li>Open-source maintainer</li>
+            <li>Automated forecasting platform with interactive dashboard</li>
+            <li>Spatio-temporal environmental data pipelines & harmonization</li>
+            <li>Algorithms for skew/large data fusion and robust pollution modelling</li>
           </ul>
         </div>
       </div>
@@ -202,16 +200,16 @@
         <h2>Contact</h2>
         <span class="meta">Let’s talk</span>
       </div>
-      <p>Email me at <a href="mailto:you@example.com">you@example.com</a> or DM me on <a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a>.</p>
-      <p class="note">Tip: add a custom domain in your repo settings, and put a <span class="kbd">CNAME</span> file in the root.</p>
+      <p>Email: <a href="mailto:pietro.colombo.statistica@gmail.com">pietro.colombo.statistica@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/Pietrostat193" target="_blank" rel="noopener">github.com/Pietrostat193</a></p>
+      <p class="note">Tip: add a custom domain in repo settings and put a <span class="kbd">CNAME</span> file in the root if you use one.</p>
     </section>
 
     <footer class="foot">
-      <span>© <span id="year"></span> Your Name</span>
+      <span>© <span id="year"></span> Pietro Colombo — Glasgow, UK</span>
       <div class="socials">
-        <a href="https://github.com/yourname" aria-label="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/in/yourname" aria-label="LinkedIn">LinkedIn</a>
-        <a href="https://yourblog.example" aria-label="Blog">Blog</a>
+        <a href="https://github.com/Pietrostat193" aria-label="GitHub">GitHub</a>
+        <a href="mailto:pietro.colombo.statistica@gmail.com" aria-label="Email">Email</a>
       </div>
     </footer>
   </div>
@@ -219,12 +217,39 @@
   <script>
     // Set year
     document.getElementById('year').textContent = new Date().getFullYear();
+
     // Theme toggle
     const toggle = document.getElementById('modeToggle');
-    const setMode = (m) => { document.documentElement.classList.toggle('light', m==='light'); localStorage.setItem('mode', m); };
-    const current = localStorage.getItem('mode') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    const setMode = (m) => {
+      document.documentElement.classList.toggle('light', m==='light');
+      localStorage.setItem('mode', m);
+    };
+    const current = localStorage.getItem('mode')
+      || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     setMode(current);
     toggle.addEventListener('click', () => setMode(document.documentElement.classList.contains('light') ? 'dark' : 'light'));
+
+    // (Optional) Auto-list your latest GitHub repos under Projects (appends extra cards)
+    async function loadRepos() {
+      try {
+        const res = await fetch('https://api.github.com/users/Pietrostat193/repos?sort=updated&per_page=6');
+        const repos = (await res.json()).filter(r => !r.fork);
+        const grid = document.getElementById('projectGrid');
+        repos.forEach(r => {
+          const el = document.createElement('article');
+          el.className = 'card';
+          el.innerHTML = `
+            <div class="thumb" style="background-image:url('assets/project-2.jpg')" aria-hidden="true"></div>
+            <div class="card-body">
+              <h3><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h3>
+              <div class="meta">${r.description ? r.description : 'Public repository'}</div>
+              <div class="tags"><span class="tag">⭐ ${r.stargazers_count}</span> <span class="tag">Updated ${new Date(r.updated_at).toLocaleDateString()}</span></div>
+            </div>`;
+          grid.appendChild(el);
+        });
+      } catch(e) { /* silently ignore */ }
+    }
+    loadRepos();
   </script>
 </body>
 </html>
