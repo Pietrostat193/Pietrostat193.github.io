@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pietro Colombo (This Page is under development some information might be incorrect/missing) – Statistician & ML Researcher</title>
+  <title>Pietro Colombo (This page is under development; some information may be incorrect/missing) – Statistician & ML Researcher</title>
   <meta name="description" content="Portfolio of Pietro Colombo — statistician and researcher in machine learning, data fusion, forecasting, and approximation methods for large spatio-temporal datasets." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,8 @@
     .btn.primary{ background:linear-gradient(180deg, #6aa6ff, #4b84ff); border-color:#3f70db; box-shadow:0 0 0 6px var(--ring) }
     .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
     .card{ background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden }
-    .thumb{ aspect-ratio:16/9; background:#1a2230 url('assets/project-1.jpg') center/cover no-repeat; border-bottom:1px solid var(--border) }
+    .thumb{ aspect-ratio:16/9; background:#1a2230; border-bottom:1px solid var(--border); display:block }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block }
     .card-body{ padding:16px }
     .card h3{ margin:0 0 6px; font-size:18px }
     .meta{ font-size:12px; color:var(--muted) }
@@ -84,7 +85,7 @@
 
     <section class="hero">
       <div>
-        <span class="chip">Based in Glasgow-Zurich • </span>
+        <span class="chip">Based in Glasgow–Zurich • </span>
         <h1>Data fusion, forecasting, and scalable models for spatio-temporal data.</h1>
         <p>I build statistical and machine-learning solutions for energy, environment, and economics—combining rigorous modelling with practical automation and dashboards. Visiting Researcher at ETH Zürich; PhD candidate in Statistics at the University of Glasgow; Lecturer and research collaborator across the UK, Switzerland, and Italy.</p>
         <div class="cta">
@@ -93,12 +94,18 @@
         </div>
       </div>
       <div class="card">
-                  <div class="thumb" style="background-image:url('assets/Fossr.png')"></div>
+        <div class="thumb">
+          <img src="assets/Fossr.png" alt="Automated Forecasting Platform screenshot" loading="lazy"
+               onerror="this.onerror=null;this.src='assets/project-1.jpg';" />
+        </div>
         <div class="card-body">
           <div class="meta">Featured project</div>
           <h3>Automated Forecasting Platform</h3>
-          <p class="meta">Upload-anything time-series tool with transforms, model selection, and scenario tweaks via interactive R Shiny. Note that the platform is not pubblic
-            accessible for more information contact Prof Matteo Pelagatti https://github.com/matteopelagatti .</p>
+          <p class="meta">
+            Upload-anything time-series tool with transforms, model selection, and scenario tweaks via an interactive R Shiny app.
+            Note: the platform is not publicly accessible. For more information, contact
+            <a href="https://github.com/matteopelagatti" target="_blank" rel="noopener noreferrer">Prof. Matteo Pelagatti</a>.
+          </p>
           <div class="tags">
             <span class="tag">R</span>
             <span class="tag">Shiny</span>
@@ -113,12 +120,16 @@
         <h2>Projects</h2>
         <span class="meta">Selected work</span>
       </div>
+
       <div class="grid" id="projectGrid">
-        <!-- Project cards (curated) -->
+        <!-- Spatio-Temporal Environmental DB -->
         <article class="card">
-          <div class="thumb" style="background-image:url('assets/scarface.png')"></div>
+          <div class="thumb">
+            <img src="assets/scarface.png" alt="Spatio-temporal environmental DB" loading="lazy"
+                 onerror="this.onerror=null;this.src='assets/project-2.jpg';" />
+          </div>
           <div class="card-body">
-            <h3><a href="https://www.paolomaranzano.net/scarface" target="_blank" rel="noopener">Spatio-Temporal Environmental DB</a></h3>
+            <h3><a href="https://www.paolomaranzano.net/scarface" target="_blank" rel="noopener noreferrer">Spatio-Temporal Environmental DB</a></h3>
             <div class="meta">Automated ingestion from Eurostat GISCO, ISTAT, Copernicus ERA-5, LUCAS, EDGAR (JRC), and EEA; harmonization + block kriging to a common support.</div>
             <div class="tags">
               <span class="tag">Python</span><span class="tag">APIs</span><span class="tag">GIS</span><span class="tag">Kriging</span>
@@ -126,78 +137,76 @@
           </div>
         </article>
 
-
-      <article class="card">
-  <div class="thumb">
-    <img src="assets/hurricanes.png" 
-         alt="Visualization of hurricane forecasting project" 
-         style="width:100%; height:auto; display:block;">
-  </div>
-  <div class="card-body">
-    <h3>
-      <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/env.70009" 
-         target="_blank" 
-         rel="noopener">
-        Atlantic Hurricane Forecasting
-      </a>
-    </h3>
-    <div class="meta">
-      Yearly hurricane count forecasts using probabilistic, machine-learning, 
-      and statistical methods; emphasis on uncertainty.
-    </div>
-    <div class="tags">
-      <span class="tag">Probabilistic Modelling</span>
-      <span class="tag">ML</span>
-      <span class="tag">Forecasting</span>
-      <span class="tag">Time-series</span>
-    </div>
-  </div>
-</article>
-
-
-        
-<article class="card">
-  <div class="thumb" style="background-image:url('assets/OpenSensorMap.png')"></div>
-  <div class="card-body">
-    <h3>
-      <a href="https://github.com/Pietrostat193/Robust-Multi-fidelity-Modelling/tree/main" target="_blank">
-        Developed an Algorithm for Robust Pollution Modelling
-      </a>
-    </h3>
-    <div class="meta">
-     In this project, we combined citizen-sensor data with official monitoring network measurements to predict pollutant concentrations. 
-      Since citizen-contributed data can often be unreliable, we developed an algorithm that is resilient to anomalous observations,
-      enabling more accurate air-quality predictions.
-    </div>
-    <div class="tags">
-      <span class="tag">Robust Stats</span>
-      <span class="tag">Air Quality</span>
-      <span class="tag">Spatio-Temporal</span>
-    </div>
-  </div>
-</article>
-
+        <!-- Atlantic Hurricane Forecasting -->
         <article class="card">
-  <div class="thumb" style="background-image:url('assets/SouthLombardy_prediction.png')"></div>
-  <div class="card-body">
-    <h3>
-      <a href="https://github.com/Pietrostat193/Public-Vecchia-Approximation-for-multifidelity-models" target="_blank">
-        Developed a large dataset algorithm
-      </a>
-    </h3>
-    <div class="meta">
-     In this project, we combined we developed an extention of the Multi-fidelity Gaussian process algorithm including the vecchia 
-      approximation to manage large dataset. In this way, the algorithm can be run on milions of data;
-    </div>
-    <div class="tags">
-      <span class="tag">Robust Stats</span>
-      <span class="tag">Air Quality</span>
-      <span class="tag">Spatio-Temporal</span>
-    </div>
-  </div>
-</article>
+          <div class="thumb">
+            <img src="assets/hurricanes.png" alt="Atlantic hurricane forecasting" loading="lazy"
+                 onerror="this.onerror=null;this.src='assets/project-3.jpg';" />
+          </div>
+          <div class="card-body">
+            <h3>
+              <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/env.70009" target="_blank" rel="noopener noreferrer">
+                Atlantic Hurricane Forecasting
+              </a>
+            </h3>
+            <div class="meta">
+              Yearly hurricane count forecasts using probabilistic, machine-learning, and statistical methods; emphasis on uncertainty.
+            </div>
+            <div class="tags">
+              <span class="tag">Probabilistic Modelling</span>
+              <span class="tag">ML</span>
+              <span class="tag">Forecasting</span>
+              <span class="tag">Time Series</span>
+            </div>
+          </div>
+        </article>
 
-        
+        <!-- Robust Pollution Modelling -->
+        <article class="card">
+          <div class="thumb">
+            <img src="assets/OpenSensorMap.png" alt="Robust pollution modelling" loading="lazy"
+                 onerror="this.onerror=null;this.src='assets/project-4.jpg';" />
+          </div>
+          <div class="card-body">
+            <h3>
+              <a href="https://github.com/Pietrostat193/Robust-Multi-fidelity-Modelling/tree/main" target="_blank" rel="noopener noreferrer">
+                Robust Pollution Modelling
+              </a>
+            </h3>
+            <div class="meta">
+              We combined citizen-sensor data with official monitoring network measurements to predict pollutant concentrations. Because citizen-contributed data can be noisy, we developed an algorithm resilient to anomalous observations to improve air-quality predictions.
+            </div>
+            <div class="tags">
+              <span class="tag">Robust Stats</span>
+              <span class="tag">Air Quality</span>
+              <span class="tag">Spatio-Temporal</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vecchia Approximation / Large Dataset MF-GP -->
+        <article class="card">
+          <div class="thumb">
+            <img src="assets/SouthLombardy_prediction.png" alt="Vecchia approximation for multi-fidelity models" loading="lazy"
+                 onerror="this.onerror=null;this.src='assets/project-5.jpg';" />
+          </div>
+          <div class="card-body">
+            <h3>
+              <a href="https://github.com/Pietrostat193/Public-Vecchia-Approximation-for-multifidelity-models" target="_blank" rel="noopener noreferrer">
+                Large-Scale Multi-Fidelity GP (Vecchia Approximation)
+              </a>
+            </h3>
+            <div class="meta">
+              Extension of the multi-fidelity Gaussian process with the Vecchia approximation to handle millions of observations efficiently.
+            </div>
+            <div class="tags">
+              <span class="tag">Gaussian Processes</span>
+              <span class="tag">Approximation</span>
+              <span class="tag">Large Data</span>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -252,7 +261,7 @@
         <span class="meta">Let’s talk</span>
       </div>
       <p>Email: <a href="mailto:pietro.colombo.statistica@gmail.com">pietro.colombo.statistica@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/Pietrostat193" target="_blank" rel="noopener">github.com/Pietrostat193</a></p>
+      <p>GitHub: <a href="https://github.com/Pietrostat193" target="_blank" rel="noopener noreferrer">github.com/Pietrostat193</a></p>
       <p class="note">Tip: add a custom domain in repo settings and put a <span class="kbd">CNAME</span> file in the root if you use one.</p>
     </section>
 
@@ -280,27 +289,19 @@
     setMode(current);
     toggle.addEventListener('click', () => setMode(document.documentElement.classList.contains('light') ? 'dark' : 'light'));
 
-    // (Optional) Auto-list your latest GitHub repos under Projects (appends extra cards)
-    async function loadRepos() {
-      try {
-        const res = await fetch('https://api.github.com/users/Pietrostat193/repos?sort=updated&per_page=6');
-        const repos = (await res.json()).filter(r => !r.fork);
-        const grid = document.getElementById('projectGrid');
-        repos.forEach(r => {
-          const el = document.createElement('article');
-          el.className = 'card';
-          el.innerHTML = `
-            <div class="thumb" style="background-image:url('assets/project-2.jpg')" aria-hidden="true"></div>
-            <div class="card-body">
-              <h3><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h3>
-              <div class="meta">${r.description ? r.description : 'Public repository'}</div>
-              <div class="tags"><span class="tag">⭐ ${r.stargazers_count}</span> <span class="tag">Updated ${new Date(r.updated_at).toLocaleDateString()}</span></div>
-            </div>`;
-          grid.appendChild(el);
-        });
-      } catch(e) { /* silently ignore */ }
+    // Removed auto GitHub repo appender to avoid unrelated repos showing up.
+    // If you ever want it back, gate it behind an allowlist, e.g.:
+    /*
+    async function loadReposAllowlist() {
+      const allow = ['Robust-Multi-fidelity-Modelling','Public-Vecchia-Approximation-for-multifidelity-models'];
+      for (const name of allow) {
+        const res = await fetch(`https://api.github.com/repos/Pietrostat193/${name}`);
+        const r = await res.json();
+        // ...append card here...
+      }
     }
-    loadRepos();
+    // loadReposAllowlist();
+    */
   </script>
 </body>
 </html>
