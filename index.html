@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pietro Colombo (This page is under development; some information may be missing) – Statistician & Quantitive Researcher & Data Scientist</title>
-  <meta name="description" content="Portfolio of Pietro Colombo — statistician and researcher in machine learning, data fusion, forecasting, energy modelling, and approximation methods for large spatio-temporal datasets." />
+  <title>Pietro Colombo – Portfolio (Forecasting & Spatio‑Temporal)</title>
+  <meta name="description" content="Portfolio of Pietro Colombo — forecasting and spatio‑temporal projects grouped into two main folders." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,11 +27,15 @@
     .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:24px 0 10px }
     .hero h1{ font-size:40px; line-height:1.15; margin:.2em 0 }
     .hero p{ color:var(--muted); margin:0 0 16px }
-    .hero .cta{ display:flex; gap:12px; margin-top:8px }
+    .hero .cta{ display:flex; gap:12px; margin-top:8px; flex-wrap:wrap }
     .btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--card); color:var(--text); font-weight:600 }
     .btn.primary{ background:linear-gradient(180deg, #6aa6ff, #4b84ff); border-color:#3f70db; box-shadow:0 0 0 6px var(--ring) }
     .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+    .folders{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:18px 0 0 }
     .card{ background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden }
+    .folder-card{ position:relative; padding:18px; border-radius:16px; background:linear-gradient(180deg, #141b27, #0e141f); border:1px solid var(--border) }
+    .folder-card h3{ margin:0 0 6px }
+    .folder-meta{ color:var(--muted); font-size:14px; margin:0 }
     .thumb{ aspect-ratio:16/9; background:#1a2230; border-bottom:1px solid var(--border); display:block }
     .thumb img{ width:100%; height:100%; object-fit:cover; display:block }
     .card-body{ padding:16px }
@@ -51,13 +55,17 @@
     .note{ font-size:12px }
     .kbd{ font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; background:#0f1420; border:1px solid var(--border); border-radius:6px; padding:2px 6px }
     .toggle{ cursor:pointer; padding:6px 10px; border-radius:8px; border:1px solid var(--border); color:var(--muted); background:var(--card) }
+    .crumbs{ display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); margin:8px 0 0 }
+    .crumbs a{ color:var(--muted) }
 
-    @media (max-width: 900px){
+    @media (max-width: 1000px){ .grid{ grid-template-columns:1fr 1fr } }
+    @media (max-width: 700px){
       .hero{ grid-template-columns:1fr; }
       .grid{ grid-template-columns:1fr; }
       .about{ grid-template-columns:1fr; }
       header{ flex-direction:column; align-items:flex-start }
       .nav{ display:flex; gap:14px; flex-wrap:wrap }
+      .folders{ grid-template-columns:1fr }
     }
 
     /* Light mode */
@@ -75,224 +83,141 @@
         </div>
       </div>
       <nav class="nav" aria-label="Primary">
-        <a href="#projects" class="active">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#folders" class="active">Folders</a>
+        <a href="#forecasting">Forecasting</a>
+        <a href="#spatiotemporal">Spatio‑Temporal</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <button class="toggle" id="modeToggle" aria-label="Toggle color mode">Toggle theme</button>
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="folders">
       <div>
         <span class="chip">Based in Glasgow–Zurich • </span>
-        <h1> Energy, forecasting, and scalable data fusion models for spatio-temporal data.</h1>
-        <p>I build statistical and machine-learning solutions for energy, environment, and economics—combining rigorous modelling with practical automation and dashboards. Visiting Researcher at ETH Zürich; PhD candidate in Statistics at the University of Glasgow; Lecturer and research collaborator across the UK, Switzerland, and Italy.</p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View projects</a>
+        <h1>Forecasting and spatio‑temporal data fusion for energy, environment, and economics.</h1>
+        <p>I build statistical and machine‑learning solutions—combining rigorous modelling with practical automation and dashboards. Visiting Researcher at ETH Zürich; PhD candidate in Statistics at the University of Glasgow; Lecturer and research collaborator across the UK, Switzerland, and Italy.</p>
+        <div class="cta" role="group" aria-label="Open a folder">
+          <a class="btn primary" href="#forecasting" data-open-folder="forecasting">Open “Forecasting”</a>
+          <a class="btn" href="#spatiotemporal" data-open-folder="spatiotemporal">Open “Spatio‑Temporal”</a>
           <a class="btn" href="assets/Pietro-Colombo-CV.pdf">Download résumé</a>
         </div>
+        <div class="crumbs" id="breadcrumbs" aria-live="polite">
+          <span>Home</span>
+        </div>
       </div>
-      <div class="card">
+      <div class="card" aria-hidden="true">
         <div class="thumb">
-          <img src="assets/Fossr.png" alt="Automated Forecasting Platform screenshot" loading="lazy"
-               onerror="this.onerror=null;this.src='assets/project-1.jpg';" />
+          <img src="assets/Fossr.png" alt="Featured dashboard screenshot" loading="lazy" onerror="this.onerror=null;this.src='assets/project-1.jpg';" />
         </div>
         <div class="card-body">
           <div class="meta">Featured project</div>
           <h3>Automated Forecasting Platform</h3>
-          <p class="meta">
-            Upload-anything time-series tool with transforms, model selection, and scenario tweaks via an interactive R Shiny app.
-            Note: the platform is not publicly accessible. For more information, contact Matteo Pelagatti at matteo.pelagatti@unimib.it
-            <a href="https://bicocca-datalab.shinyapps.io/forecaster/" target="_blank" rel="noopener noreferrer">Prof. Matteo Pelagatti</a>.
-          </p>
-          <div class="tags">
-            <span class="tag">R</span>
-            <span class="tag">Shiny</span>
-            <span class="tag">Time Series</span>
-          </div>
+          <p class="meta">Upload‑anything time‑series tool with transforms, model selection, and scenario tweaks via an interactive R Shiny app. For access details contact <a href="mailto:matteo.pelagatti@unimib.it">Prof. Matteo Pelagatti</a>.</p>
+          <div class="tags"><span class="tag">R</span><span class="tag">Shiny</span><span class="tag">Time Series</span></div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <!-- FOLDERS (two main cards) -->
+    <section aria-labelledby="folders-title">
       <div class="section-title">
-        <h2>Projects</h2>
-        <span class="meta">Selected work</span>
+        <h2 id="folders-title">Folders</h2>
+        <span class="meta">Choose a category</span>
       </div>
-
-
-
-      <div class="grid" id="projectGrid">
-        <!-- Spatio-Temporal Environmental DB -->
-        <article class="card">
-          <div class="thumb">
-            <img src="assets/scarface.png" alt="Spatio-temporal environmental DB" loading="lazy"
-                 onerror="this.onerror=null;this.src='assets/project-2.jpg';" />
-          </div>
-          <div class="card-body">
-            <h3><a href="https://www.paolomaranzano.net/scarface" target="_blank" rel="noopener noreferrer">Spatio-Temporal Environmental DB</a></h3>
-            <div class="meta">Automated ingestion from Eurostat GISCO, ISTAT, Copernicus ERA-5, LUCAS, EDGAR (JRC), and EEA; harmonization + block kriging to a common support.</div>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">APIs</span><span class="tag">GIS</span><span class="tag">Kriging</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Atlantic Hurricane Forecasting -->
-        <article class="card">
-          <div class="thumb">
-            <img src="assets/hurricanes.png" alt="Atlantic hurricane forecasting" loading="lazy"
-                 onerror="this.onerror=null;this.src='assets/project-3.jpg';" />
-          </div>
-          <div class="card-body">
-            <h3>
-              <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/env.70009" target="_blank" rel="noopener noreferrer">
-                Atlantic Hurricane Forecasting
-              </a>
-            </h3>
-            <div class="meta">
-              Yearly hurricane count forecasts using probabilistic, machine-learning, and statistical methods; emphasis on uncertainty.
-            </div>
-            <div class="tags">
-              <span class="tag">Probabilistic Modelling</span>
-              <span class="tag">ML</span>
-              <span class="tag">Forecasting</span>
-              <span class="tag">Time Series</span>
-            </div>
-          </div>
-        </article>
-
-
-
-    <!-- Electricity Demand & Energy Transition -->
-<article class="card">
-  <a class="thumb" href="#energy-demand-transition" aria-label="Open project: Electricity demand forecasting & energy transition">
-    <img src="assets/WindForecasting.png" alt="Chart and icons for electricity demand, renewables, and climate impacts"
-         loading="lazy" onerror="this.onerror=null;this.src='assets/project-7,';" />
-  </a>
-  <div class="card-body">
-    <h3>
-      <a href="#energy-demand-transition">
-        Electricity Demand Forecasting & Energy Transition
-      </a>
-    </h3>
-    <div class="meta">
-      Forecasts electricity demand and tracks firms’ conversion to renewables.
-      Builds indicators from company data & surveys, links climate/price drivers,
-      and highlights sectoral risks and “most virtuous” adopters.
-    </div>
-    <div class="tags">
-      <span class="tag">Forecasting</span>
-      <span class="tag">Energy</span>
-      <span class="tag">Climate Risk</span>
-      <span class="tag">ML</span>
-      <span class="tag">Indicators</span>
-    </div>
-  </div>
-</article>
-        
-
-        <!-- Robust Pollution Modelling -->
-        <article class="card">
-          <div class="thumb">
-            <img src="assets/OpenSensorMap.png" alt="Robust pollution modelling" loading="lazy"
-                 onerror="this.onerror=null;this.src='assets/project-4.jpg';" />
-          </div>
-          <div class="card-body">
-            <h3>
-              <a href="https://github.com/Pietrostat193/Robust-Multi-fidelity-Modelling/tree/main" target="_blank" rel="noopener noreferrer">
-                Robust Pollution Modelling
-              </a>
-            </h3>
-            <div class="meta">
-              We combined citizen-sensor data with official monitoring network measurements to predict pollutant concentrations. Because citizen-contributed data can be noisy, we developed an algorithm resilient to anomalous observations to improve air-quality predictions.
-            </div>
-            <div class="tags">
-              <span class="tag">Robust Stats</span>
-              <span class="tag">Air Quality</span>
-              <span class="tag">Spatio-Temporal</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Vecchia Approximation / Large Dataset MF-GP -->
-        <article class="card">
-          <div class="thumb">
-            <img src="assets/SouthLombardy_prediction.png" alt="Vecchia approximation for multi-fidelity models" loading="lazy"
-                 onerror="this.onerror=null;this.src='assets/project-5.jpg';" />
-          </div>
-          <div class="card-body">
-            <h3>
-              <a href="https://github.com/Pietrostat193/Public-Vecchia-Approximation-for-multifidelity-models" target="_blank" rel="noopener noreferrer">
-                Large-Scale Multi-Fidelity GP (Vecchia Approximation)
-              </a>
-            </h3>
-            <div class="meta">
-              Extension of the multi-fidelity Gaussian process with the Vecchia approximation to handle millions of observations efficiently.
-            </div>
-            <div class="tags">
-              <span class="tag">Gaussian Processes</span>
-              <span class="tag">Approximation</span>
-              <span class="tag">Large Data</span>
-            </div>
-          </div>
-        </article>
-
-
-
-
-<article class="card">
-  <div class="thumb">
-    <!-- Optional: include a relevant graphic or placeholder -->
-    <img src="assets/interpUncer.png" alt="Graph of interpolation uncertainty vs altitude/distance" loading="lazy"
-         onerror="this.onerror=null;this.src='assets/project-placeholder.jpg';" />
-  </div>
-  <div class="card-body">
-    <h3>
-      <a href="https://iopscience.iop.org/article/10.1088/1361-6501/ac5bff" target="_blank" rel="noopener noreferrer">
-        Quantifying the interpolation uncertainty of radiosonde humidity profiles
-      </a>
-    </h3>
-    <div class="meta">
-      Measurement Science and Technology, Vol. 33 (7), 074001 (12 pp) — April 2022
-    </div>
-    <p class="meta">
-      Investigates the uncertainty introduced when filling gaps in radiosonde relative-humidity profiles. Compares linear vs Gaussian-process interpolation, considering interpolation distance (in seconds), altitude, and launch site.
-    </p>
-    <p class="meta">
-      Results: Produced a lookup table that associated interpolation uncertainty to gap length, altitude and launch site. :contentReference[oaicite:0]{index=0}
-    </p>
-    <div class="tags">
-      <span class="tag">Interpolation Uncertainty</span>
-      <span class="tag">Gaussian Process</span>
-      <span class="tag">Radiosonde</span>
-      <span class="tag">Bootstrap</span>
-    </div>
-  </div>
-</article>
-
-        
-
+      <div class="folders">
+        <a class="folder-card" href="#forecasting" data-open-folder="forecasting" aria-label="Open Forecasting folder">
+          <h3>📁 Forecasting</h3>
+          <p class="folder-meta">Time‑series, probabilistic models, energy demand, hurricanes, and automated workflows.</p>
+        </a>
+        <a class="folder-card" href="#spatiotemporal" data-open-folder="spatiotemporal" aria-label="Open Spatio‑Temporal folder">
+          <h3>📁 Spatio‑Temporal</h3>
+          <p class="folder-meta">Data fusion, kriging, robust pollution modelling, Vecchia approximations, and uncertainty.</p>
+        </a>
       </div>
     </section>
 
-    <section id="skills">
+    <!-- FORECASTING FOLDER -->
+    <section id="forecasting">
       <div class="section-title">
-        <h2>Skills</h2>
-        <span class="meta">What I work with</span>
+        <h2>Forecasting</h2>
+        <span class="meta">Projects in this folder</span>
       </div>
-      <div class="skills">
-        <span class="skill">Python</span>
-        <span class="skill">R</span>
-        <span class="skill">Matlab</span>
-        <span class="skill">Time-Series Forecasting</span>
-        <span class="skill">Data Fusion</span>
-        <span class="skill">Spatio-Temporal Modelling</span>
-        <span class="skill">GIS / Kriging</span>
-        <span class="skill">Machine Learning</span>
-        <span class="skill">Git & GitHub</span>
-        <span class="skill">Teaching & Supervision</span>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><img src="assets/Fossr.png" alt="Automated Forecasting Platform" loading="lazy" onerror="this.onerror=null;this.src='assets/project-1.jpg';"></div>
+          <div class="card-body">
+            <div class="meta">Featured</div>
+            <h3>Automated Forecasting Platform</h3>
+            <p class="meta">Upload‑anything time series tool with transforms, model selection, and scenario tweaks via R Shiny. <a href="https://bicocca-datalab.shinyapps.io/forecaster/" target="_blank" rel="noopener noreferrer">Demo (info)</a>.</p>
+            <div class="tags"><span class="tag">R</span><span class="tag">Shiny</span><span class="tag">Time Series</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="assets/hurricanes.png" alt="Atlantic hurricane forecasting" loading="lazy" onerror="this.onerror=null;this.src='assets/project-3.jpg';"></div>
+          <div class="card-body">
+            <h3><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/env.70009" target="_blank" rel="noopener noreferrer">Atlantic Hurricane Forecasting</a></h3>
+            <div class="meta">Yearly hurricane count forecasts using probabilistic, ML, and statistical methods with explicit uncertainty.</div>
+            <div class="tags"><span class="tag">Probabilistic</span><span class="tag">ML</span><span class="tag">Forecasting</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="#energy-demand-transition" aria-label="Open project: Electricity demand forecasting & energy transition">
+            <img src="assets/WindForecasting.png" alt="Electricity demand & renewables" loading="lazy" onerror="this.onerror=null;this.src='assets/project-7.jpg';" />
+          </a>
+          <div class="card-body">
+            <h3><a href="#energy-demand-transition">Electricity Demand Forecasting & Energy Transition</a></h3>
+            <div class="meta">Forecasts demand, tracks firms’ conversion to renewables, builds indicators, and links climate/price drivers to sectoral risk.</div>
+            <div class="tags"><span class="tag">Forecasting</span><span class="tag">Energy</span><span class="tag">Indicators</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SPATIO‑TEMPORAL FOLDER -->
+    <section id="spatiotemporal">
+      <div class="section-title">
+        <h2>Spatio‑Temporal</h2>
+        <span class="meta">Projects in this folder</span>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><img src="assets/scarface.png" alt="Spatio‑Temporal Environmental DB" loading="lazy" onerror="this.onerror=null;this.src='assets/project-2.jpg';"></div>
+          <div class="card-body">
+            <h3><a href="https://www.paolomaranzano.net/scarface" target="_blank" rel="noopener noreferrer">Spatio‑Temporal Environmental DB</a></h3>
+            <div class="meta">Automated ingestion from Eurostat GISCO, ISTAT, Copernicus ERA‑5, LUCAS, EDGAR (JRC), EEA; harmonization + block kriging.</div>
+            <div class="tags"><span class="tag">Python</span><span class="tag">APIs</span><span class="tag">GIS</span><span class="tag">Kriging</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="assets/OpenSensorMap.png" alt="Robust pollution modelling" loading="lazy" onerror="this.onerror=null;this.src='assets/project-4.jpg';"></div>
+          <div class="card-body">
+            <h3><a href="https://github.com/Pietrostat193/Robust-Multi-fidelity-Modelling/tree/main" target="_blank" rel="noopener noreferrer">Robust Pollution Modelling</a></h3>
+            <div class="meta">Combines citizen‑sensor data with official networks; robust algorithms for anomalous observations to improve air‑quality predictions.</div>
+            <div class="tags"><span class="tag">Robust Stats</span><span class="tag">Air Quality</span><span class="tag">Spatio‑Temporal</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="assets/SouthLombardy_prediction.png" alt="Large‑Scale Multi‑Fidelity GP" loading="lazy" onerror="this.onerror=null;this.src='assets/project-5.jpg';"></div>
+          <div class="card-body">
+            <h3><a href="https://github.com/Pietrostat193/Public-Vecchia-Approximation-for-multifidelity-models" target="_blank" rel="noopener noreferrer">Large‑Scale Multi‑Fidelity GP (Vecchia)</a></h3>
+            <div class="meta">Extends multi‑fidelity Gaussian processes with Vecchia approximation to handle millions of observations efficiently.</div>
+            <div class="tags"><span class="tag">Gaussian Processes</span><span class="tag">Approximation</span><span class="tag">Large Data</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="assets/interpUncer.png" alt="Interpolation uncertainty" loading="lazy" onerror="this.onerror=null;this.src='assets/project-6.jpg';"></div>
+          <div class="card-body">
+            <h3><a href="https://iopscience.iop.org/article/10.1088/1361-6501/ac5bff" target="_blank" rel="noopener noreferrer">Interpolation Uncertainty of Radiosonde Humidity Profiles</a></h3>
+            <div class="meta">Measurement Science and Technology, 33(7), 074001, 2022 — linear vs Gaussian‑process interpolation across gap length, altitude, and site.</div>
+            <div class="tags"><span class="tag">Uncertainty</span><span class="tag">Gaussian Process</span><span class="tag">Radiosonde</span></div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -302,7 +227,7 @@
           <h2>About</h2>
           <span class="meta">Who I am</span>
         </div>
-        <p class="blurb">I’m a statistician and researcher focusing on scalable modelling for large spatio-temporal datasets, data integration, and forecasting across energy, environment, and economics. Experience spans public and private sectors, short-term consultancies, and academic teaching.</p>
+        <p class="blurb">I’m a statistician and researcher focusing on scalable modelling for large spatio‑temporal datasets, data integration, and forecasting across energy, environment, and economics. Experience spans public and private sectors, short‑term consultancies, and academic teaching.</p>
         <ul class="meta" style="margin-top:8px">
           <li>Visiting Research — ETH Zürich (Approximation methods for large datasets)</li>
           <li>PhD in Statistics — University of Glasgow (Data Fusion for environmental variables)</li>
@@ -315,7 +240,7 @@
           <h3>Highlights</h3>
           <ul>
             <li>Automated forecasting platform with interactive dashboard</li>
-            <li>Spatio-temporal environmental data pipelines & harmonization</li>
+            <li>Spatio‑temporal environmental data pipelines & harmonization</li>
             <li>Algorithms for skew/large data fusion and robust pollution modelling</li>
           </ul>
         </div>
@@ -329,7 +254,7 @@
       </div>
       <p>Email: <a href="mailto:pietro.colombo.statistica@gmail.com">pietro.colombo.statistica@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/Pietrostat193" target="_blank" rel="noopener noreferrer">github.com/Pietrostat193</a></p>
-      <p class="note">Note this page is under development as such many projects have not been linked.</p>
+      <p class="note">This page groups projects into two folders. Many projects remain to be linked.</p>
     </section>
 
     <footer class="foot">
@@ -356,19 +281,25 @@
     setMode(current);
     toggle.addEventListener('click', () => setMode(document.documentElement.classList.contains('light') ? 'dark' : 'light'));
 
-    // Removed auto GitHub repo appender to avoid unrelated repos showing up.
-    // If you ever want it back, gate it behind an allowlist, e.g.:
-    /*
-    async function loadReposAllowlist() {
-      const allow = ['Robust-Multi-fidelity-Modelling','Public-Vecchia-Approximation-for-multifidelity-models'];
-      for (const name of allow) {
-        const res = await fetch(`https://api.github.com/repos/Pietrostat193/${name}`);
-        const r = await res.json();
-        // ...append card here...
-      }
+    // Simple folder breadcrumbs + smooth scroll
+    const crumbs = document.getElementById('breadcrumbs');
+    function updateCrumbs(hash){
+      const label = hash === '#forecasting' ? 'Forecasting' : hash === '#spatiotemporal' ? 'Spatio‑Temporal' : 'Home';
+      crumbs.innerHTML = `<a href="#folders">Home</a>${label!=='Home' ? ` <span>›</span> <span>${label}</span>` : ''}`;
     }
-    // loadReposAllowlist();
-    */
+    updateCrumbs(location.hash);
+    window.addEventListener('hashchange', () => updateCrumbs(location.hash));
+
+    // Enhance anchor clicks from folder cards / buttons
+    document.querySelectorAll('[data-open-folder]').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.getAttribute('data-open-folder');
+        updateCrumbs('#'+id);
+      });
+    });
+
+    // Optional: smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
   </script>
 </body>
 </html>
